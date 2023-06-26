@@ -34,6 +34,7 @@ function Page() {
     } catch (error: any) {
       console.log(error);
       toast.error(error.message);
+      return;
     }
   };
 
@@ -45,6 +46,7 @@ function Page() {
     } catch (error: any) {
       console.log(error);
       toast.error(error.message);
+      return;
     }
   };
   const [urls, seturls] = react.useState<any[] | null>(null);
