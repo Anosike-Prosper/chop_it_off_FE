@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 type RequestOptions = {
 	method: string
 	body?: {}
@@ -21,7 +21,7 @@ export async function request(url: string, { method, body }: { method: string, b
 	if (method.toLowerCase() != "get")
 		options.body = body;
 
-	const response = await fetch(`http://localhost:4000${url}`, options as RequestInit);
+	const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${url}`, options as RequestInit);
 	const data = await response.json();
 
 	console.log(response.status)
